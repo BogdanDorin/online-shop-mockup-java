@@ -65,7 +65,9 @@ public class Products {
         this.stock = stock;
     }
 
-    public String toSave(){
+
+    @Override
+    public String toString(){
         String text = id + ",";
         text += name + ",";
         text += price + ",";
@@ -74,17 +76,7 @@ public class Products {
         return text;
     }
 
-    @Override
-    public String toString() {
 
-        String text = "id: " + id + "\n";
-        text += "name: " + name + "\n";
-        text += "price: " + price + "\n";
-        text += "category: " + category + "\n";
-        text += "stock: " + stock + "\n";
-
-        return text;
-    }
 
     @Override
     public boolean equals(Object obj) {

@@ -89,7 +89,7 @@ public class OrderDetails {
     public boolean equals(Object obj){
 
         OrderDetails orderDetails = (OrderDetails) obj;
-        return true;
+        return this.id == id && this.orderID == orderID;
     }
 
 }

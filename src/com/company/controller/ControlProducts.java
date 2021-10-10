@@ -47,12 +47,18 @@ public class ControlProducts {
         }
     }
 
-    public void stergereProdus(Products products1) {
-        products.remove(products1);
+    public void stergereProdus(int id) {
+
+        for (Products product : products){
+            if (product.getId() == id){
+                products.remove(id);
+            }
+        }
     }
 
-    public void adaugareProdus(Products products1) {
-        products.add(products1);
+    public void adaugareProdus(Products product1) {
+
+        products.add(product1);
     }
 
     public Products getProduct(int id) {
@@ -69,10 +75,11 @@ public class ControlProducts {
         products1.setStock(stock);
     }
 
-    public String save() {
+    @Override
+    public String toString() {
         String text = "";
         for (Products products1 : products) {
-            text += products1.toSave();
+            text += products1;
             text += "\n";
         }
         return text;
@@ -84,7 +91,7 @@ public class ControlProducts {
             FileWriter w = new FileWriter(file);
             PrintWriter p = new PrintWriter(w);
 
-            p.print(this.save());
+            p.print(this);
 
             p.close();
 

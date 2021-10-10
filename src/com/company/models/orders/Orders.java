@@ -87,12 +87,13 @@ public class Orders {
         return text;
     }
 
-//    @Override
-//    public boolean equals(Object obj){
-//
-//        Orders orders = (Orders) obj;
-//
-//    }
+    @Override
+    public boolean equals(Object obj){
+
+        Orders orders = (Orders) obj;
+        return this.id == id && this.customerID == customerID;
+
+    }
 
 
 }

@@ -91,7 +91,7 @@ public class Customers {
     public boolean equals(Object obj) {
 
         Customers customers = (Customers) obj;
-        return this.email.equals(email) && this.password.equals(password);
+        return this.id == id && this.email.equals(email) && this.password.equals(password);
     }
 
 }
