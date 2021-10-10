@@ -65,6 +65,14 @@ public class Products {
         this.stock = stock;
     }
 
+    public String toSave(){
+        String text = id + ",";
+        text += name + ",";
+        text += price + ",";
+        text += category + ",";
+        text += stock + ",";
+        return text;
+    }
 
     @Override
     public String toString() {

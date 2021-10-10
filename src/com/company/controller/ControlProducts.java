@@ -55,22 +55,24 @@ public class ControlProducts {
         products.add(products1);
     }
 
-    public Products getProduct(String name) {
-        for (Products product : products)
-            if (product.getName().equals(name))
-                return product;
+    public Products getProduct(int id) {
+        for (int i = 0; i < products.size(); i++){
+            if (products.get(i).getId() == id){
+                return products.get(i);
+            }
+        }
         return null;
     }
 
-    public void updateStock(String name, int stock) {
-        Products products1 = getProduct(name);
+    public void updateStock(int id, int stock) {
+        Products products1 = getProduct(id);
         products1.setStock(stock);
     }
 
     public String save() {
         String text = "";
         for (Products products1 : products) {
-            text += products1.toString();
+            text += products1.toSave();
             text += "\n";
         }
         return text;

@@ -1,6 +1,4 @@
-11,Kit ventilatoare,300,Accessories,10,racire,RGB,
-12,Cablu alimentare placa video, 150,Accessories,7,alimentare,rosu,
-13,Tastatura,325,Periferice,6,logitec,mecanica,
-14,Mouse,175,Periferice,12,logitec,wireless
-16,Asus laptop,2799,Computers,4,asus,office
-17,MSI laptop,3199,Computers,15,msi,office
+11,ventilator,60,Accessories,5,racire,alb,
+12,mouse,123,Periferice,7,logitec,10kdpi,
+13,tastatura,350,Periferice,9,logitec,mecanica,
+14,laptop office,3199,Computers,10,asus,zenbook,
