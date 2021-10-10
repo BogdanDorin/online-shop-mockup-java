@@ -91,7 +91,7 @@ public class ControlProducts {
             FileWriter w = new FileWriter(file);
             PrintWriter p = new PrintWriter(w);
 
-            p.print(this);
+            p.print(this.toString());
 
             p.close();
 
