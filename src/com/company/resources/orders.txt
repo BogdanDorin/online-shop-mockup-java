@@ -1,0 +1,6 @@
+21,01,325,Sibiu,Sibiu,
+22,01,150,Sibiu,Sibiu,
+23,04,2799,Bucuresti,Bucuresti,
+24,02,300,Brasov,Brasov,
+25,03,3199,Cluj,Cluj,
+26,02,175,Brasov,Brasov,
