@@ -9,10 +9,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ControlOrderDetailsTest {
     @Test
-    public void testAddOD(){
-        ControlOrderDetails controlOrderDetails = new ControlOrderDetails(Path.of("src","com","company","resources","orderdetails.txt").toString());
+    public void testAddOD() {
+        ControlOrderDetails controlOrderDetails = new ControlOrderDetails(Path.of("src", "com", "company", "resources", "orderdetails.txt").toString());
 
-        controlOrderDetails.addOrderDetails(new OrderDetails(799,999,999,546,77));
+        controlOrderDetails.addOrderDetails(new OrderDetails(799, 999, 999, 546, 77));
         controlOrderDetails.salvare();
         assertEquals(true, controlOrderDetails.getOrderDetails(799) != null);
     }
@@ -28,8 +28,8 @@ class ControlOrderDetailsTest {
 //    }
 
     @Test
-    public void testUpdateQuantity(){
-        ControlOrderDetails controlOrderDetails = new ControlOrderDetails(Path.of("src","com","company","resources","orderdetails.txt").toString());
+    public void testUpdateQuantity() {
+        ControlOrderDetails controlOrderDetails = new ControlOrderDetails(Path.of("src", "com", "company", "resources", "orderdetails.txt").toString());
 
         controlOrderDetails.updateODquantity(7, 100);
         controlOrderDetails.salvare();
@@ -38,8 +38,8 @@ class ControlOrderDetailsTest {
     }
 
     @Test
-    public void testUpdatePrice(){
-        ControlOrderDetails controlOrderDetails = new ControlOrderDetails(Path.of("src","com","company","resources","orderdetails.txt").toString());
+    public void testUpdatePrice() {
+        ControlOrderDetails controlOrderDetails = new ControlOrderDetails(Path.of("src", "com", "company", "resources", "orderdetails.txt").toString());
 
         controlOrderDetails.updateODprice(7, 100);
         controlOrderDetails.salvare();

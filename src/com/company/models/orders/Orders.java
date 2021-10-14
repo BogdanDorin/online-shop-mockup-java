@@ -65,20 +65,7 @@ public class Orders {
         this.orderAddress = orderAddress;
     }
 
-    public String toSave() {
-
-        String text = id + ",";
-        text += customerID + ",";
-        text += ammount + ",";
-        text += shippingAddress + ",";
-        text += orderAddress + ",";
-        return text;
-    }
-
-
-    @Override
-    public String toString() {
-
+    public String descriptionO() {
         String text = "id: " + id + "\n";
         text += "customer's id: " + customerID + "\n";
         text += "ammount: " + ammount + "\n";
@@ -87,8 +74,19 @@ public class Orders {
         return text;
     }
 
+
     @Override
-    public boolean equals(Object obj){
+    public String toString() {
+        String text = id + ",";
+        text += customerID + ",";
+        text += ammount + ",";
+        text += shippingAddress + ",";
+        text += orderAddress + ",";
+        return text;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
 
         Orders orders = (Orders) obj;
         return this.id == id && this.customerID == customerID;

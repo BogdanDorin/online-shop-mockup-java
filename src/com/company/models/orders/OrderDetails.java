@@ -65,7 +65,7 @@ public class OrderDetails {
         this.quantity = quantity;
     }
 
-    public String description() {
+    public String descriptionOD() {
         String text = "id: " + id + "\n";
         text += "orderID: " + orderID + "\n";
         text += "productID: " + productID + "\n";
@@ -85,7 +85,7 @@ public class OrderDetails {
     }
 
     @Override
-    public boolean equals(Object obj){
+    public boolean equals(Object obj) {
 
         OrderDetails orderDetails = (OrderDetails) obj;
         return this.id == id && this.orderID == orderID;

@@ -16,7 +16,7 @@ public class ControlOrders {
     private ArrayList<Orders> controlOrders;
     private String path;
 
-    public ControlOrders(String path){
+    public ControlOrders(String path) {
         controlOrders = new ArrayList<>();
         this.path = path;
         load();
@@ -38,34 +38,36 @@ public class ControlOrders {
         }
     }
 
-    public Orders getOrder(int id){
+    public Orders getOrder(int id) {
         for (int i = 0; i < controlOrders.size(); i++)
             if (controlOrders.get(i).getId() == id)
                 return controlOrders.get(i);
         return null;
     }
 
-    public void addOrder(Orders order){ controlOrders.add(order); }
+    public void addOrder(Orders order) {
+        controlOrders.add(order);
+    }
 
-    public void deleteOrder(int id){
+    public void deleteOrder(int id) {
         for (Orders order : controlOrders)
             if (order.getId() == id)
                 controlOrders.remove(id);
 
     }
 
-    public void updateAmmount(int id, int newAmmount){
+    public void updateAmmount(int id, int newAmmount) {
         Orders order = getOrder(id);
         order.setAmmount(newAmmount);
     }
 
-    public void updateShippingAddress(int id, String newShippingAddress){
+    public void updateShippingAddress(int id, String newShippingAddress) {
         Orders order = getOrder(id);
         order.setShippingAddress(newShippingAddress);
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         String text = "";
         for (Orders orders : controlOrders) {
             text += orders.toString();

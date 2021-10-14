@@ -33,8 +33,8 @@ public class Computers extends Products {
         this.type = type;
     }
 
-    public String description(){
-        String text = "ID: " + getId()+ "\n";
+    public String description() {
+        String text = "ID: " + getId() + "\n";
         text += "Product's name: " + getName() + "\n";
         text += "Price: " + getPrice() + "\n";
         text += "Category: " + getCategory() + "\n";

@@ -15,7 +15,7 @@ public class Products {
         this.stock = stock;
     }
 
-    public Products(String text){
+    public Products(String text) {
 
         String[] word = text.split(",");
         id = Integer.parseInt(word[0]);
@@ -65,7 +65,7 @@ public class Products {
         this.stock = stock;
     }
 
-    public String description(){
+    public String description() {
         String text = "ID: " + id + "\n";
         text += "Product's name: " + name + "\n";
         text += "Price: " + price + "\n";
@@ -75,7 +75,7 @@ public class Products {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         String text = id + ",";
         text += name + ",";
         text += price + ",";

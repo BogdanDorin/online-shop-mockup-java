@@ -65,25 +65,23 @@ public class Customers {
         this.billingAddress = billingAddress;
     }
 
-    public String toSave() {
-
-        String text = id + ",";
-        text += email + ",";
-        text += password + ",";
-        text += fullName + ",";
-        text += billingAddress + ",";
+    public String descriptionC() {
+        String text = "id: " + id + "\n";
+        text += "email: " + email + "\n";
+        text += "password: " + password + "\n";
+        text += "full name: " + fullName + "\n";
+        text += "billing address: " + billingAddress + "\n";
         return text;
     }
 
 
     @Override
     public String toString() {
-
-        String text = "id: " + id + "\n";
-        text += "email: " + email + "\n";
-        text += "password: " + password + "\n";
-        text += "full name: " + fullName + "\n";
-        text += "billing address: " + billingAddress + "\n";
+        String text = id + ",";
+        text += email + ",";
+        text += password + ",";
+        text += fullName + ",";
+        text += billingAddress + ",";
         return text;
     }
 

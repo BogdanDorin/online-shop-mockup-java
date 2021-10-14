@@ -12,8 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class ControlProductsTest {
 
     @Test
-    public void testStergereProdus(){
-        ControlProducts controlProducts = new ControlProducts(Path.of("src","com","company","resources","products.txt").toString());
+    public void testStergereProdus() {
+        ControlProducts controlProducts = new ControlProducts(Path.of("src", "com", "company", "resources", "products.txt").toString());
 
         controlProducts.stergereProdus(1);
 
@@ -23,10 +23,10 @@ class ControlProductsTest {
     }
 
     @Test
-    public void testAdaugareProdus(){
-        ControlProducts controlProducts = new ControlProducts(Path.of("src","com","company","resources","products.txt").toString());
+    public void testAdaugareProdus() {
+        ControlProducts controlProducts = new ControlProducts(Path.of("src", "com", "company", "resources", "products.txt").toString());
 
-        controlProducts.adaugareProdus(new Computers(123,"testprodus",999,10,"test","computers"));
+        controlProducts.adaugareProdus(new Computers(123, "testprodus", 999, 10, "test", "computers"));
 
 
         controlProducts.salvare();
@@ -36,10 +36,10 @@ class ControlProductsTest {
     }
 
     @Test
-    public void testUpdateStock(){
-        ControlProducts controlProducts = new ControlProducts(Path.of("src","com","company","resources","products.txt").toString());
+    public void testUpdateStock() {
+        ControlProducts controlProducts = new ControlProducts(Path.of("src", "com", "company", "resources", "products.txt").toString());
 
-        controlProducts.updateStock(123,1000);
+        controlProducts.updateStock(123, 1000);
 
         controlProducts.salvare();
 
