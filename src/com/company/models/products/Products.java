@@ -65,6 +65,14 @@ public class Products {
         this.stock = stock;
     }
 
+    public String description(){
+        String text = "ID: " + id + "\n";
+        text += "Product's name: " + name + "\n";
+        text += "Price: " + price + "\n";
+        text += "Category: " + category + "\n";
+        text += "Stock: " + stock + "\n";
+        return text;
+    }
 
     @Override
     public String toString(){
@@ -75,7 +83,6 @@ public class Products {
         text += stock + ",";
         return text;
     }
-
 
 
     @Override

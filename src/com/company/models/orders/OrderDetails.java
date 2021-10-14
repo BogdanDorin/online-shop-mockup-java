@@ -65,23 +65,22 @@ public class OrderDetails {
         this.quantity = quantity;
     }
 
-    public String toSave() {
-
-        String text = id + ",";
-        text += orderID + ",";
-        text += productID + ",";
-        text += price + ",";
-        text += quantity + ",";
-        return text;
-    }
-
-    @Override
-    public String toString() {
+    public String description() {
         String text = "id: " + id + "\n";
         text += "orderID: " + orderID + "\n";
         text += "productID: " + productID + "\n";
         text += "price: " + price + "\n";
         text += "quantity: " + quantity + "\n";
+        return text;
+    }
+
+    @Override
+    public String toString() {
+        String text = id + ",";
+        text += orderID + ",";
+        text += productID + ",";
+        text += price + ",";
+        text += quantity + ",";
         return text;
     }
 

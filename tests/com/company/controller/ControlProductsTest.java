@@ -15,10 +15,11 @@ class ControlProductsTest {
     public void testStergereProdus(){
         ControlProducts controlProducts = new ControlProducts(Path.of("src","com","company","resources","products.txt").toString());
 
-        controlProducts.stergereProdus(3);
+        controlProducts.stergereProdus(1);
 
         controlProducts.salvare();
-        assertEquals(true, controlProducts.getProduct(13) == null);
+
+        assertEquals(true, controlProducts.getProduct(1) == null);
     }
 
     @Test

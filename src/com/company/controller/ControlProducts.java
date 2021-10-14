@@ -79,7 +79,7 @@ public class ControlProducts {
     public String toString() {
         String text = "";
         for (Products products1 : products) {
-            text += products1;
+            text += products1.toString();
             text += "\n";
         }
         return text;
@@ -99,5 +99,4 @@ public class ControlProducts {
             e.printStackTrace();
         }
     }
-
 }

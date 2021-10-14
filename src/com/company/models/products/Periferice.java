@@ -33,6 +33,16 @@ public class Periferice extends Products {
         this.descriere = descriere;
     }
 
+    public String description(){
+        String text = "ID: " + getId()+ "\n";
+        text += "Product's name: " + getName() + "\n";
+        text += "Price: " + getPrice() + "\n";
+        text += "Category: " + getCategory() + "\n";
+        text += "Stock: " + getStock() + "\n";
+        text += "Model: " + model + "\n";
+        text += "Description: " + descriere + "\n";
+        return text;
+    }
 
     @Override
     public String toString() {
