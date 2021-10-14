@@ -3,4 +3,4 @@
 2,mouse,123,Periferice,7,logitec,10kdpi,
 3,tastatura,350,Periferice,9,logitec,mecanica,
 4,laptop office,3199,Computers,10,asus,zenbook,
-123,testprodus,999,Computers,1000,test,computers,
+5,testprodus,999,Computers,1000,test,computers,

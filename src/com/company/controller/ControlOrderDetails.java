@@ -55,10 +55,9 @@ public class ControlOrderDetails {
     }
 
     public void deleteOrderDetails(int id) {
-        for (OrderDetails orderDetails : orderDetailss1) {
-            if (orderDetails.getId() == id) {
+        for (int i = 0; i < orderDetailss1.size(); i++){
+            if (orderDetailss1.get(i).getId() == id)
                 orderDetailss1.remove(id);
-            }
         }
     }
 

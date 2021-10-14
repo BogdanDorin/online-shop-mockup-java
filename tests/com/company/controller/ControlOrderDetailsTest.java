@@ -12,20 +12,20 @@ class ControlOrderDetailsTest {
     public void testAddOD() {
         ControlOrderDetails controlOrderDetails = new ControlOrderDetails(Path.of("src", "com", "company", "resources", "orderdetails.txt").toString());
 
-        controlOrderDetails.addOrderDetails(new OrderDetails(799, 999, 999, 546, 77));
+        controlOrderDetails.addOrderDetails(new OrderDetails(5, 999, 999, 546, 77));
         controlOrderDetails.salvare();
-        assertEquals(true, controlOrderDetails.getOrderDetails(799) != null);
+        assertEquals(true, controlOrderDetails.getOrderDetails(5) != null);
     }
 
-//    @Test
-//    public void testDeleteOD(){
-//        ControlOrderDetails controlOrderDetails = new ControlOrderDetails(Path.of("src","com","company","resources","orderdetails.txt").toString());
-//
-//        controlOrderDetails.deleteOrderDetails(1);
-//        controlOrderDetails.salvare();
-//        assertEquals(true, controlOrderDetails.getOrderDetails(1) == null);
-//
-//    }
+    @Test
+    public void testDeleteOD(){
+        ControlOrderDetails controlOrderDetails = new ControlOrderDetails(Path.of("src","com","company","resources","orderdetails.txt").toString());
+
+        controlOrderDetails.deleteOrderDetails(5);
+        controlOrderDetails.salvare();
+        assertEquals(false, controlOrderDetails.getOrderDetails(6) != null);
+
+    }
 
     @Test
     public void testUpdateQuantity() {

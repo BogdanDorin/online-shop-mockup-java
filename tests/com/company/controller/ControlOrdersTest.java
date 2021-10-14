@@ -62,6 +62,6 @@ class ControlOrdersTest {
         controlOrders.deleteOrder(5);
         controlOrders.salvare();
 
-        assertEquals(false, controlOrders.getOrder(5));
+        assertEquals(null, controlOrders.getOrder(5));
     }
 }

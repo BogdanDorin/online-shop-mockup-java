@@ -50,9 +50,10 @@ public class ControlOrders {
     }
 
     public void deleteOrder(int id) {
-        for (Orders order : controlOrders)
-            if (order.getId() == id)
+        for (int i = 0; i < controlOrders.size(); i++){
+            if (controlOrders.get(i).getId() == id)
                 controlOrders.remove(id);
+        }
     }
 
     public void updateAmmount(int id, int newAmmount) {
