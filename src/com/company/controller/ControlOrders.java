@@ -53,7 +53,6 @@ public class ControlOrders {
         for (Orders order : controlOrders)
             if (order.getId() == id)
                 controlOrders.remove(id);
-
     }
 
     public void updateAmmount(int id, int newAmmount) {
@@ -64,6 +63,12 @@ public class ControlOrders {
     public void updateShippingAddress(int id, String newShippingAddress) {
         Orders order = getOrder(id);
         order.setShippingAddress(newShippingAddress);
+    }
+
+    public void afisare(){
+        for (Orders orders : controlOrders){
+            System.out.println(orders.descriptionO());
+        }
     }
 
     @Override
