@@ -1,4 +1,4 @@
-01,dorinb@gmail.com,dorin123,Dorin Bogdan,Sibiu,
-02,alexd@gmail.com,alex123,Alex Dobre,Brasov,
-03,silviamihailescu@gmail.com,silvia123,Silvia Mihailescu,Cluj,
-04,georgescuionela@gmail.com,ionela123,Ionela Georgescu,Bucuresti,
+0,dorinb@gmail.com,dorin123,Dorin Bogdan,Sibiu,
+1,alexd@gmail.com,alex123,Alex Dobre,Brasov,
+2,silviamihailescu@gmail.com,silvia123,Silvia Mihailescu,Cluj,
+3,georgescuionela@gmail.com,ionela123,Ionela Georgescu,Bucuresti,

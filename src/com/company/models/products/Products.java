@@ -82,6 +82,6 @@ public class Products {
     public boolean equals(Object obj) {
 
         Products products = (Products) obj;
-        return this.name.equals(name);
+        return this.name.equals(name) && this.id == id;
     }
 }
