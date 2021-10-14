@@ -35,34 +35,34 @@ public class ControlOrderDetails {
         }
     }
 
-    public OrderDetails getOrderDetails(int id){
-        for (int i = 0; i < orderDetailss1.size(); i++){
-            if (orderDetailss1.get(i).getId() == id){
+    public OrderDetails getOrderDetails(int id) {
+        for (int i = 0; i < orderDetailss1.size(); i++) {
+            if (orderDetailss1.get(i).getId() == id) {
                 return orderDetailss1.get(i);
             }
         }
         return null;
     }
 
-    public void updateODprice(int id, int newPrice){
+    public void updateODprice(int id, int newPrice) {
         OrderDetails orderDetails = getOrderDetails(id);
         orderDetails.setPrice(newPrice);
     }
 
-    public void updateODquantity(int id, int newQuantity){
+    public void updateODquantity(int id, int newQuantity) {
         OrderDetails orderDetails = getOrderDetails(id);
         orderDetails.setQuantity(newQuantity);
     }
 
-    public void deleteOrderDetails(int id){
-        for (OrderDetails orderDetails : orderDetailss1){
-            if (orderDetails.getId() == id){
+    public void deleteOrderDetails(int id) {
+        for (OrderDetails orderDetails : orderDetailss1) {
+            if (orderDetails.getId() == id) {
                 orderDetailss1.remove(id);
             }
         }
     }
 
-    public void addOrderDetails(OrderDetails orderDetails){
+    public void addOrderDetails(OrderDetails orderDetails) {
         orderDetailss1.add(orderDetails);
     }
 
