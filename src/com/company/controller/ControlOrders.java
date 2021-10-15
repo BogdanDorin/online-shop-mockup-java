@@ -1,10 +1,7 @@
 package com.company.controller;
 
-import com.company.models.orders.OrderDetails;
+
 import com.company.models.orders.Orders;
-import com.company.models.products.Accessories;
-import com.company.models.products.Computers;
-import com.company.models.products.Periferice;
 
 import java.io.File;
 import java.io.FileWriter;

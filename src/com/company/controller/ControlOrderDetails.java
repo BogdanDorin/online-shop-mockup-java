@@ -1,7 +1,6 @@
 package com.company.controller;
 
 import com.company.models.orders.OrderDetails;
-import com.company.models.products.Products;
 
 import java.io.File;
 import java.io.FileWriter;
