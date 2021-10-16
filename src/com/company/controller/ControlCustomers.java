@@ -87,4 +87,12 @@ public class ControlCustomers {
             e.printStackTrace();
         }
     }
+
+    public int nextId() {
+        if (controlCustomers.size() == 0) {
+            return 1;
+        } else {
+            return controlCustomers.get(controlCustomers.size() - 1).getId() + 1;
+        }
+    }
 }

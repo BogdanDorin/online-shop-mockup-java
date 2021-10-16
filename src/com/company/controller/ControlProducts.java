@@ -48,7 +48,7 @@ public class ControlProducts {
     }
 
     public void stergereProdus(int id) {
-        for (int i = 0; i < products.size(); i++){
+        for (int i = 0; i < products.size(); i++) {
             if (products.get(i).getId() == id)
                 products.remove(id);
         }
@@ -68,9 +68,24 @@ public class ControlProducts {
         return null;
     }
 
+    public Products getProductname(String name) {
+        for (int i = 0; i < products.size(); i++) {
+            if (products.get(i).getName().equals(name)) {
+                return products.get(i);
+            }
+        }
+        return null;
+    }
+
     public void updateStock(int id, int stock) {
         Products products1 = getProduct(id);
         products1.setStock(stock);
+    }
+
+    public void afisare() {
+        for (Products product : products) {
+            System.out.println(product.description());
+        }
     }
 
     @Override
@@ -97,4 +112,13 @@ public class ControlProducts {
             e.printStackTrace();
         }
     }
+
+    public int nextId() {
+        if (products.size() == 0) {
+            return 1;
+        } else {
+            return products.get(products.size() - 1).getId() + 1;
+        }
+    }
+
 }

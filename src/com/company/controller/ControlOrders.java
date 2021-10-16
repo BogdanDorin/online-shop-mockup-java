@@ -47,7 +47,7 @@ public class ControlOrders {
     }
 
     public void deleteOrder(int id) {
-        for (int i = 0; i < controlOrders.size(); i++){
+        for (int i = 0; i < controlOrders.size(); i++) {
             if (controlOrders.get(i).getId() == id)
                 controlOrders.remove(id);
         }
@@ -63,8 +63,8 @@ public class ControlOrders {
         order.setShippingAddress(newShippingAddress);
     }
 
-    public void afisare(){
-        for (Orders orders : controlOrders){
+    public void afisare() {
+        for (Orders orders : controlOrders) {
             System.out.println(orders.descriptionO());
         }
     }
@@ -90,4 +90,15 @@ public class ControlOrders {
             e.printStackTrace();
         }
     }
+
+
+    public int nextId() {
+        if (controlOrders.size() == 0) {
+            return 1;
+        } else {
+            return controlOrders.get(controlOrders.size() - 1).getId() + 1;
+        }
+    }
+
+
 }

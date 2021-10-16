@@ -54,7 +54,7 @@ public class ControlOrderDetails {
     }
 
     public void deleteOrderDetails(int id) {
-        for (int i = 0; i < orderDetailss1.size(); i++){
+        for (int i = 0; i < orderDetailss1.size(); i++) {
             if (orderDetailss1.get(i).getId() == id)
                 orderDetailss1.remove(id);
         }
@@ -85,5 +85,14 @@ public class ControlOrderDetails {
             e.printStackTrace();
         }
     }
+
+    public int nextId() {
+        if (orderDetailss1.size() == 0) {
+            return 1;
+        } else {
+            return orderDetailss1.get(orderDetailss1.size() - 1).getId() + 1;
+        }
+    }
+
 
 }

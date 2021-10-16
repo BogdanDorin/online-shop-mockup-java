@@ -1,5 +1,0 @@
-0,0,120,Sibiu,Sibiu,
-1,0,60,Sibiu,Sibiu,
-2,3,123,Bucuresti,Bucuresti,
-3,1,350,Brasov,Brasov,
-4,2,3199,Cluj,Cluj,
