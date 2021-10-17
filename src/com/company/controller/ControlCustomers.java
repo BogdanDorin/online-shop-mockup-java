@@ -44,6 +44,14 @@ public class ControlCustomers {
         return null;
     }
 
+    public Customers getCustomerEmailPass(String email, String password){
+        for (int i = 0; i < controlCustomers.size(); i++){
+            if (controlCustomers.get(i).getEmail().equals(email) && controlCustomers.get(i).getPassword().equals(password))
+                return controlCustomers.get(i);
+        }
+        return null;
+    }
+
     public void addCustomer(Customers customer) {
         controlCustomers.add(customer);
     }
@@ -65,6 +73,9 @@ public class ControlCustomers {
         Customers customer = getCustomer(id);
         customer.setFullName(newName);
     }
+
+
+
 
     @Override
     public String toString() {

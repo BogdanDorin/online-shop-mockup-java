@@ -1,6 +1,7 @@
 package com.company.controller;
 
 import com.company.models.orders.OrderDetails;
+import com.company.models.orders.Orders;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -94,5 +95,10 @@ public class ControlOrderDetails {
         }
     }
 
-
+    public void viewOrder(int orderID){
+        for (OrderDetails orderDetails : orderDetailss1){
+            if (orderDetails.getId() == orderID)
+                System.out.println(orderDetails.descriptionOD());
+        }
+    }
 }
