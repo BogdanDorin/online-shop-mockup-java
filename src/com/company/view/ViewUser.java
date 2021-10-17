@@ -103,73 +103,55 @@ public class ViewUser {
     }
 
     public void viewCart() {
-        System.out.println("E-mail: ");
-        String email = scanner.nextLine();
-        System.out.println("Password: ");
-        String pass = scanner.nextLine();
 
-        Customers customer = controlCustomers.getCustomerEmailPass(email, pass);
 
-        if (customer != null) {
+        System.out.println("What is the order's id ?");
+        int orderID = Integer.parseInt(scanner.nextLine());
 
-            System.out.println("What is the order's id ?");
-            int orderID = Integer.parseInt(scanner.nextLine());
+        if (controlOrderDetails.getOrderDetails(orderID) != null) {
 
-            if (controlOrderDetails.getOrderDetails(orderID) != null) {
-                // order view by customerID
-                controlOrderDetails.viewOrder(orderID);
-            } else {
-                System.out.println("The order does not exist. Review the order's id");
-            }
+            controlOrderDetails.viewOrder(orderID);
         } else {
-            System.out.println("E-mail or password incorrect.");
+            System.out.println("The order does not exist. Review the order's id");
         }
+
     }
 
     public void editCart() {
-        System.out.println("E-mail: ");
-        String email = scanner.nextLine();
-        System.out.println("Password: ");
-        String pass = scanner.nextLine();
 
-        Customers customer = controlCustomers.getCustomerEmailPass(email, pass);
 
-        if (customer != null) {
+        System.out.println("What is the order's id ?");
+        int orderID = Integer.parseInt(scanner.nextLine());
 
-            System.out.println("What is the order's id ?");
-            int orderID = Integer.parseInt(scanner.nextLine());
+        if (controlOrders.getOrder(orderID) != null) {
+            System.out.println("Enter product's name: ");
+            String nameP = scanner.nextLine();
 
-            if (controlOrders.getOrder(orderID) != null) {
-                System.out.println("Enter product's name: ");
-                String nameP = scanner.nextLine();
+            if (controlProducts.getProductname(nameP) != null) {
 
-                if (controlProducts.getProductname(nameP) != null) {
+                System.out.println("Enter the wanted quantity: ");
+                int quantity = Integer.parseInt(scanner.nextLine());
 
-                    System.out.println("Enter the wanted quantity: ");
-                    int quantity = Integer.parseInt(scanner.nextLine());
+                if (controlProducts.getProductname(nameP).getStock() >= quantity) {
 
-                    if (controlProducts.getProductname(nameP).getStock() >= quantity) {
-
-                        controlOrderDetails.updateODquantity(
-                                orderID,
-                                quantity);
-                        controlOrderDetails.updateODprice(
-                                orderID,
-                                quantity * controlProducts.getProductname(nameP).getPrice());
-                    } else {
-                        System.out.println("We don't own this quantity. Check the quantity available.");
-                    }
-
+                    controlOrderDetails.updateODquantity(
+                            orderID,
+                            quantity);
+                    controlOrderDetails.updateODprice(
+                            orderID,
+                            quantity * controlProducts.getProductname(nameP).getPrice());
                 } else {
-                    System.out.println("The product does not exist.");
+                    System.out.println("We don't own this quantity. Check the quantity available.");
                 }
 
             } else {
-                System.out.println("The order does not exist. Review the order's id");
+                System.out.println("The product does not exist.");
             }
+
         } else {
-            System.out.println("E-mail or password incorrect.");
+            System.out.println("The order does not exist. Review the order's id");
         }
+
     }
 
 
