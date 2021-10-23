@@ -45,6 +45,14 @@ public class ControlCustomers {
         return null;
     }
 
+    public Customers getCustomerEmail(String email) {
+        for (int i = 0; i < controlCustomers.size(); i++) {
+            if (controlCustomers.get(i).getEmail().equals(email))
+                return controlCustomers.get(i);
+        }
+        return null;
+    }
+
     public Customers getCustomerEmailPass(String email, String password) {
         for (int i = 0; i < controlCustomers.size(); i++) {
             if (controlCustomers.get(i).getEmail().equals(email) && controlCustomers.get(i).getPassword().equals(password))
