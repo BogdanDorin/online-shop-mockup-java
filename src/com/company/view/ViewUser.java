@@ -64,9 +64,10 @@ public class ViewUser {
         System.out.println("Use 3 to edit the password");
         System.out.println("Use 4 to edit the billing address");
         System.out.println("Use 5 to view your profile");
-        System.out.println("==================================================");
+        System.out.println("====================================================");
+        System.out.println("Use 0 to come back to Main menu");
+        System.out.println("====================================================");
     }
-
 
     public void play() {
         boolean running = true;
@@ -138,6 +139,8 @@ public class ViewUser {
             }
         }
     }
+
+    // cart methods
 
     public void addCart() {
         System.out.println("Type the product name: ");
@@ -236,7 +239,7 @@ public class ViewUser {
         controlOrders.salvare();
     }
 
-    //edit name email pass billing address
+    // profile methods
 
     public void editName(){
         System.out.println("enter the new name:");
