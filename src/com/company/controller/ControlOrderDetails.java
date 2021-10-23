@@ -106,7 +106,7 @@ public class ControlOrderDetails {
        return list;
     }
 
-    public int orderAmmount(int orderID){
+    public int orderAmount(int orderID){
         int contor = 0;
        for (int i = 0 ;i < orderDetailss1.size();i++){
            if (orderDetailss1.get(i).getOrderID() == orderID){

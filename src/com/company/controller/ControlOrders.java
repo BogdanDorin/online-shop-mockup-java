@@ -1,7 +1,6 @@
 package com.company.controller;
 
 
-import com.company.models.orders.Customers;
 import com.company.models.orders.Orders;
 
 import java.io.File;
@@ -54,9 +53,9 @@ public class ControlOrders {
         }
     }
 
-    public void updateAmmount(int id, int newAmmount) {
+    public void updateAmount(int id, int newAmount) {
         Orders order = getOrder(id);
-        order.setAmmount(newAmmount);
+        order.setAmount(newAmount);
     }
 
     public void updateShippingAddress(int id, String newShippingAddress) {

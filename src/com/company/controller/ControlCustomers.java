@@ -1,6 +1,7 @@
 package com.company.controller;
 
 import com.company.models.orders.Customers;
+import com.company.models.orders.OrderDetails;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -44,8 +45,8 @@ public class ControlCustomers {
         return null;
     }
 
-    public Customers getCustomerEmailPass(String email, String password){
-        for (int i = 0; i < controlCustomers.size(); i++){
+    public Customers getCustomerEmailPass(String email, String password) {
+        for (int i = 0; i < controlCustomers.size(); i++) {
             if (controlCustomers.get(i).getEmail().equals(email) && controlCustomers.get(i).getPassword().equals(password))
                 return controlCustomers.get(i);
         }
@@ -74,8 +75,15 @@ public class ControlCustomers {
         customer.setFullName(newName);
     }
 
+    public void updateEmail(int id, String newEmail) {
+        Customers customer = getCustomer(id);
+        customer.setEmail(newEmail);
+    }
 
-
+    public void updateBillingAddress(int id, String newBillingAddress) {
+        Customers customer = getCustomer(id);
+        customer.setBillingAddress(newBillingAddress);
+    }
 
     @Override
     public String toString() {
@@ -105,5 +113,15 @@ public class ControlCustomers {
         } else {
             return controlCustomers.get(controlCustomers.size() - 1).getId() + 1;
         }
+    }
+
+    public ArrayList<Customers> viewProfile(int customerID) {
+        ArrayList<Customers> list = new ArrayList<>();
+        for (Customers customer : controlCustomers) {
+            if (customer.getId() == customerID) {
+                list.add(customer);
+            }
+        }
+        return list;
     }
 }

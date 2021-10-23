@@ -2,4 +2,4 @@
 2,alexd@gmail.com,alex123,Alex Dobre,Brasov,
 3,silviamihailescu@gmail.com,silvia123,Silvia Mihailescu,Cluj,
 4,georgescuionela@gmail.com,ionela123,Ionela Georgescu,Bucuresti,
-5,test@gmail.com,newTestPass,newTestName,greece,
+5,newtest@gmail.com,new1,newname1,newba,

@@ -1,2 +1,1 @@
-1,0,0,unknown,Sibiu,
-2,0,2,sibiu,Sibiu,
+

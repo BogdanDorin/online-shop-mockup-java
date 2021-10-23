@@ -3,14 +3,14 @@ package com.company.models.orders;
 public class Orders {
     private int id;
     private int customerID;
-    private int ammount;
+    private int amount;
     private String shippingAddress;
     private String orderAddress;
 
-    public Orders(int id, int customerID, int ammount, String shippingAddress, String orderAddress) {
+    public Orders(int id, int customerID, int amount, String shippingAddress, String orderAddress) {
         this.id = id;
         this.customerID = customerID;
-        this.ammount = ammount;
+        this.amount = amount;
         this.shippingAddress = shippingAddress;
         this.orderAddress = orderAddress;
     }
@@ -20,7 +20,7 @@ public class Orders {
         String[] word = text.split(",");
         id = Integer.parseInt(word[0]);
         customerID = Integer.parseInt(word[1]);
-        ammount = Integer.parseInt(word[2]);
+        amount = Integer.parseInt(word[2]);
         shippingAddress = word[3];
         orderAddress = word[4];
     }
@@ -41,12 +41,12 @@ public class Orders {
         this.customerID = customerID;
     }
 
-    public int getAmmount() {
-        return ammount;
+    public int getAmount() {
+        return amount;
     }
 
-    public void setAmmount(int ammount) {
-        this.ammount = ammount;
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
     public String getShippingAddress() {
@@ -68,7 +68,7 @@ public class Orders {
     public String descriptionO() {
         String text = "id: " + id + "\n";
         text += "customer's id: " + customerID + "\n";
-        text += "ammount: " + ammount + "\n";
+        text += "ammount: " + amount + "\n";
         text += "shipping address: " + shippingAddress + "\n";
         text += "order address: " + orderAddress + "\n";
         return text;
@@ -79,7 +79,7 @@ public class Orders {
     public String toString() {
         String text = id + ",";
         text += customerID + ",";
-        text += ammount + ",";
+        text += amount + ",";
         text += shippingAddress + ",";
         text += orderAddress + ",";
         return text;

@@ -11,7 +11,7 @@ import java.nio.file.Path;
 public class Main {
 
     public static void main(String[] args) {
-        Customers customers = new Customers(0, "dorinb@gmail.com", "dorin123", "Dorin Bogdan", "Sibiu");
+        Customers customers = new Customers(5,"test@gmail.com", "newTestPass","newTestName","greece");
         ViewUser viewUser = new ViewUser(customers);
 
         viewUser.play();

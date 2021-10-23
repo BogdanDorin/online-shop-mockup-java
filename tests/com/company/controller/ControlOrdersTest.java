@@ -36,13 +36,13 @@ class ControlOrdersTest {
     }
 
     @Test
-    public void testUpdateAmmount(){
+    public void testUpdateAmount(){
         ControlOrders controlOrders = new ControlOrders(Path.of("src", "com", "company", "resources", "orders.txt").toString());
 
-        controlOrders.updateAmmount(5, 1000);
+        controlOrders.updateAmount(4, 1000);
         controlOrders.salvare();
 
-        assertEquals(true, controlOrders.getOrder(5).getAmmount() == 1000);
+        assertEquals(true, controlOrders.getOrder(4).getAmount() == 1000);
     }
 
     @Test
