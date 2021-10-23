@@ -44,6 +44,8 @@ public class ViewUser {
         controlOrders.addOrder(orders);
     }
 
+    // menus
+
     public void mainMenu() {
         System.out.println("\n=================== Main Menu ===================");
         System.out.println("Press 1 to see all products");
@@ -55,8 +57,9 @@ public class ViewUser {
         System.out.println("==================================================");
         System.out.println("Press 7 to edit the profile");
         System.out.println("Press 8 to connect to your account");
+        System.out.println("Press 9 to see all the orders");
         System.out.println("==================================================");
-        System.out.println("Press 9 to see the main menu");
+        System.out.println("Press 10 to see the main menu");
         System.out.println("==================================================");
     }
 
@@ -77,6 +80,8 @@ public class ViewUser {
         System.out.println("Use 1 to login");
         System.out.println("==================================================");
     }
+
+    //
 
     public void play() {
         boolean running = true;
@@ -115,6 +120,9 @@ public class ViewUser {
                     account();
                     break;
                 case 9:
+                    controlOrders.seeOrders(customer.getId());
+                    break;
+                case 10:
                     mainMenu();
                     break;
                 default:
@@ -250,9 +258,10 @@ public class ViewUser {
 
         Products idprodus = controlProducts.getProductname(nameP); // id produs
 
-        for (int i = 0; i <= detalii.size(); i++) {
+        for (int i = 0; i < detalii.size(); i++) {
+            System.out.println(i);
             if (detalii.get(i).getProductID() == idprodus.getId()) {
-                detalii.remove(i);
+                detalii.remove(detalii.get(i));
             }
         }
 
@@ -318,6 +327,7 @@ public class ViewUser {
         }
         System.out.println(text);
     }
+
 
     // login method
 

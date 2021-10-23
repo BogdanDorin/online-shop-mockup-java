@@ -1,6 +1,7 @@
 package com.company.controller;
 
 
+import com.company.models.orders.Customers;
 import com.company.models.orders.Orders;
 
 import java.io.File;
@@ -66,6 +67,14 @@ public class ControlOrders {
     public void afisare() {
         for (Orders orders : controlOrders) {
             System.out.println(orders.descriptionO());
+        }
+    }
+
+    public void seeOrders(int customerID){
+        for (Orders order : controlOrders){
+            if (order.getCustomerID() == customerID){
+                System.out.println(order.descriptionO());
+            }
         }
     }
 
