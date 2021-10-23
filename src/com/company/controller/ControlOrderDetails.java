@@ -95,10 +95,24 @@ public class ControlOrderDetails {
         }
     }
 
-    public void viewOrder(int orderID){
-        for (OrderDetails orderDetails : orderDetailss1){
-            if (orderDetails.getId() == orderID)
-                System.out.println(orderDetails.descriptionOD());
-        }
+    public ArrayList<OrderDetails> viewOrder(int orderID){
+        ArrayList<OrderDetails> list = new ArrayList<>();
+
+       for (OrderDetails orderDetails: orderDetailss1){
+           if (orderDetails.getOrderID() == orderID){
+               list.add(orderDetails);
+           }
+       }
+       return list;
+    }
+
+    public int orderAmmount(int orderID){
+        int contor = 0;
+       for (int i = 0 ;i < orderDetailss1.size();i++){
+           if (orderDetailss1.get(i).getOrderID() == orderID){
+               contor++;
+           }
+       }
+       return contor;
     }
 }
