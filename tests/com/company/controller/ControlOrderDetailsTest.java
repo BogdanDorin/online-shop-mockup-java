@@ -52,32 +52,24 @@ class ControlOrderDetailsTest {
 
 
     @Test
-    public void testViewOrder(){
-        ControlProducts controlProducts = new ControlProducts(Path.of("src","com","company","resources","products.txt").toString());
+    public void testViewOrder() {
+        ControlProducts controlProducts = new ControlProducts(Path.of("src", "com", "company", "resources", "products.txt").toString());
         ControlOrderDetails controlOrderDetails = new ControlOrderDetails(Path.of("src", "com", "company", "resources", "orderdetails.txt").toString());
+        ArrayList<OrderDetails> detalii = controlOrderDetails.viewOrder(1);
 
+        String text = "In cos avem \n";
 
-        ArrayList<OrderDetails>detalii= controlOrderDetails.viewOrder(0);
+        for (OrderDetails o : detalii) {
 
-        String text="In cos avem \n";
+            Products p = controlProducts.getProduct(o.getProductID());
 
-        for (OrderDetails o:detalii){
-
-            Products p=controlProducts.getProduct(o.getProductID());
-
-            text+=p.getName();
-            text+="\n"+o.getQuantity()+" bucati";
-            text+="\n"+"in valaore de "+o.getPrice();
-
+            text += p.getName();
+            text += "\n" + o.getQuantity() + " bucati";
+            text += "\n" + "in valaore de " + o.getPrice();
 
         }
 
         System.out.println(text);
-
-
-
-
-
     }
 
 }

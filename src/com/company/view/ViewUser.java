@@ -56,14 +56,13 @@ public class ViewUser {
         System.out.println("Press 6 to save the cart");
         System.out.println("==================================================");
         System.out.println("Press 7 to edit the profile");
-        System.out.println("Press 8 to connect to your account");
-        System.out.println("Press 9 to see all the orders");
+        System.out.println("Press 8 to see all the orders");
         System.out.println("==================================================");
-        System.out.println("Press 10 to see the main menu");
+        System.out.println("Press 9 to see the main menu");
         System.out.println("==================================================");
     }
 
-    public void profileMenu(){
+    public void profileMenu() {
         System.out.println("\n=================== Profile Menu ===================");
         System.out.println("Use 1 to edit the name");
         System.out.println("Use 2 to edit the email");
@@ -73,12 +72,6 @@ public class ViewUser {
         System.out.println("====================================================");
         System.out.println("Use 0 to come back to Main menu");
         System.out.println("====================================================");
-    }
-
-    public void loginMenu(){
-        System.out.println("\n=================== Login Menu ===================");
-        System.out.println("Use 1 to login");
-        System.out.println("==================================================");
     }
 
     //
@@ -117,12 +110,9 @@ public class ViewUser {
                     profile();
                     break;
                 case 8:
-                    account();
-                    break;
-                case 9:
                     controlOrders.seeOrders(customer.getId());
                     break;
-                case 10:
+                case 9:
                     mainMenu();
                     break;
                 default:
@@ -132,13 +122,13 @@ public class ViewUser {
         }
     }
 
-    public void profile(){
+    public void profile() {
         boolean ok = true;
         profileMenu();
-        while (ok == true){
+        while (ok == true) {
             int choice = Integer.parseInt(scanner.nextLine());
-            switch (choice){
-                case 0 :
+            switch (choice) {
+                case 0:
                     ok = false;
                     break;
                 case 1:
@@ -163,24 +153,7 @@ public class ViewUser {
         }
     }
 
-    public void account(){
-        boolean ok = true;
-        loginMenu();
-        while (ok == true){
-            int choice = Integer.parseInt(scanner.nextLine());
-            switch (choice){
-                case 0:
-                    ok = false;
-                    break;
-                case 1:
-                    login();
-                    break;
-                default:
-                    loginMenu();
-                    break;
-            }
-        }
-    }
+
 
     // cart methods
 
@@ -249,19 +222,19 @@ public class ViewUser {
 
     public void removeFromCart() {
 
-        ArrayList<OrderDetails> detalii = controlOrderDetails.viewOrder(controlOrderDetails.getOrderDetails(orders.getId()).getOrderID());
+        ArrayList<OrderDetails> detalii = controlOrderDetails.viewOrder(orders.getId());
 
         System.out.println("enter the product name:");
         String nameP = scanner.nextLine();
 
-        System.out.println(detalii);
 
         Products idprodus = controlProducts.getProductname(nameP); // id produs
 
         for (int i = 0; i < detalii.size(); i++) {
-            System.out.println(i);
+
             if (detalii.get(i).getProductID() == idprodus.getId()) {
-                detalii.remove(detalii.get(i));
+
+                controlOrderDetails.deleteOrderDetails(detalii.get(i).getId());
             }
         }
 
@@ -284,7 +257,7 @@ public class ViewUser {
 
     // profile methods
 
-    public void editName(){
+    public void editName() {
         System.out.println("enter the new name:");
         String newName = scanner.nextLine();
 
@@ -292,7 +265,7 @@ public class ViewUser {
         controlCustomers.salvare();
     }
 
-    public void editEmail(){
+    public void editEmail() {
         System.out.println("enter the new email:");
         String newEmail = scanner.nextLine();
 
@@ -300,7 +273,7 @@ public class ViewUser {
         controlCustomers.salvare();
     }
 
-    public void editPassword(){
+    public void editPassword() {
         System.out.println("enter the new password:");
         String newPassword = scanner.nextLine();
 
@@ -308,7 +281,7 @@ public class ViewUser {
         controlCustomers.salvare();
     }
 
-    public void editBillingAddress(){
+    public void editBillingAddress() {
         System.out.println("enter the new address:");
         String newAddress = scanner.nextLine();
 
@@ -316,7 +289,7 @@ public class ViewUser {
         controlCustomers.salvare();
     }
 
-    public void viewProfile(){
+    public void viewProfile() {
         ArrayList<Customers> details = controlCustomers.viewProfile(controlCustomers.getCustomer(customer.getId()).getId());
         String text = "";
         for (Customers customer : details) {
@@ -328,48 +301,6 @@ public class ViewUser {
         System.out.println(text);
     }
 
-
-    // login method
-
-    public void login(){
-        System.out.println("Enter an email:");
-        String email = scanner.nextLine();
-
-        if (controlCustomers.getCustomerEmail(email) == null){
-            System.out.println("It looks like you don't have an account with this email. Creat an account.");
-            System.out.println("Type the password:");
-            String password = scanner.nextLine();
-            System.out.println("Enter the full name:");
-            String name = scanner.nextLine();
-            System.out.println("Enter the billing address:");
-            String bAdress = scanner.nextLine();
-
-            Customers newC = new Customers(
-                    controlCustomers.nextId(),
-                    email,
-                    password,
-                    name,
-                    bAdress
-            );
-            controlCustomers.addCustomer(newC);
-            controlCustomers.salvare();
-
-
-            ViewUser viewUser = new ViewUser(newC);
-            viewUser.play();
-        }else {
-            System.out.println("Enter the password:");
-            String password1 = scanner.nextLine();
-
-            Customers is = controlCustomers.getCustomerEmailPass(email,password1);
-
-            if (is != null){
-
-                ViewUser viewUser = new ViewUser(is);
-                viewUser.play();
-            }
-        }
-    }
 
 
 }
