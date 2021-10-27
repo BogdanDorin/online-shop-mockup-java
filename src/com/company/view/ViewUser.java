@@ -154,7 +154,6 @@ public class ViewUser {
     }
 
 
-
     // cart methods
 
     public void addCart() {
@@ -204,19 +203,27 @@ public class ViewUser {
     }
 
     public void editCart() {
-
         System.out.println("enter product name:");
         String nameProduct = scanner.nextLine();
         System.out.println("enter the new quantity");
         int quantityN = Integer.parseInt(scanner.nextLine());
 
-        if (controlOrderDetails.getOrderDetails(orders.getId()).getProductID() == controlProducts.getProductname(nameProduct).getId()) {
+        if (controlProducts.getProductname(nameProduct).getName() != null) {
+            if (controlProducts.getProductname(nameProduct).getStock() >= quantityN) {
+                if (controlOrderDetails.getOrderDetails(orders.getId()).getProductID() == controlProducts.getProductname(nameProduct).getId()) {
 
-            controlOrderDetails.updateODquantity(controlOrderDetails.getOrderDetails(orders.getId()).getId(), quantityN);
+                    controlOrderDetails.updateODquantity(controlOrderDetails.getOrderDetails(orders.getId()).getId(), quantityN);
 
-            controlOrderDetails.updateODprice(controlOrderDetails.getOrderDetails(
-                            orders.getId()).getId(),
-                    controlProducts.getProductname(nameProduct).getPrice() * quantityN);
+                    controlOrderDetails.updateODprice(controlOrderDetails.getOrderDetails(
+                                    orders.getId()).getId(),
+                            controlProducts.getProductname(nameProduct).getPrice() * quantityN);
+                    System.out.println("Edit has been completed");
+                }
+            } else {
+                System.out.println("Sorry! we do not have this quantity.");
+            }
+        } else {
+            System.out.println("OOPSS! Looks like we do not own this product. Please try again.");
         }
     }
 
@@ -300,7 +307,6 @@ public class ViewUser {
         }
         System.out.println(text);
     }
-
 
 
 }
